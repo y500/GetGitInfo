@@ -65,4 +65,6 @@ NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
 
 ```
 
+![展示图片](http://noti.qiniudn.com/37327abe09b91274ba8e9508c5ffec4f.png)
+
 
