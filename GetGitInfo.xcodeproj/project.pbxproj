@@ -160,7 +160,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "git_version=$(git log -1 --format=\"%h\")\ngit_branch=$(git symbolic-ref --short -q HEAD)\n\ngit_last_commit_user = $(git log -1 --pretty=format:'%an')\ngit_last_commit_date = $(git log -1 --format=%cd)\n\nbuild_time=$(date)\n\ninfo_plist=\"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/Info.plist\"\n/usr/libexec/PlistBuddy -c \"Set :'CFCommitSHA' '${git_version}'\" \"${info_plist}\"\n/usr/libexec/PlistBuddy -c \"Set :'CFCommitBranch' '${git_branch}'\" \"${info_plist}\"";
+			shellScript = "set -x\n#最后一次提交的SHA\ngit_version=$(git log -1 --format=\"%h\")\n\n#当前的分支\ngit_branch=$(git symbolic-ref --short -q HEAD)\n\n#最后一次提交的作者\ngit_last_commit_user=$(git log -1 --pretty=format:'%an')\n\n#最后一次提交的时间\ngit_last_commit_date=$(git log -1 --format='%cd')\n\n#编译时间\nbuild_time=$(date)\n\ninfo_plist=\"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_FOLDER_PATH}/Info.plist\"\n/usr/libexec/PlistBuddy -c \"Set :'GitCommitSHA'       '${git_version}'\"                \"${info_plist}\"\n/usr/libexec/PlistBuddy -c \"Set :'GitCommitBranch'    '${git_branch}'\"                 \"${info_plist}\"\n/usr/libexec/PlistBuddy -c \"Set :'GitCommitUser'      ${git_last_commit_user}\"       \"${info_plist}\"\n/usr/libexec/PlistBuddy -c \"Set :'GitCommitDate'      '${git_last_commit_date}'\"       \"${info_plist}\"\n/usr/libexec/PlistBuddy -c \"Set :'BuildTime'          '${build_time}'\"                 \"${info_plist}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 

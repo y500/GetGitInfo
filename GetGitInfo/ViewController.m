@@ -47,7 +47,7 @@
 
 - (UILabel*)commitLabel {
     if (!_commitLabel) {
-        _commitLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 200, 20)];
+        _commitLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 120, 300, 20)];
         _commitLabel.textColor = [UIColor colorWithRed:0x33/0xff green:0x33/0xff blue:0x33/0xff alpha:1];
     }
     return _commitLabel;
@@ -55,7 +55,7 @@
 
 - (UILabel*)branchLabel {
     if (!_branchLabel) {
-        _branchLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 50, 200, 20)];
+        _branchLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 150, 300, 20)];
         _branchLabel.textColor = [UIColor colorWithRed:0x33/0xff green:0x33/0xff blue:0x33/0xff alpha:1];
     }
     return _branchLabel;
@@ -63,15 +63,15 @@
 
 - (UILabel*)authorLabel {
     if (!_authorLabel) {
-        _authorLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 80, 200, 20)];
+        _authorLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 180, 300, 20)];
         _authorLabel.textColor = [UIColor colorWithRed:0x33/0xff green:0x33/0xff blue:0x33/0xff alpha:1];
     }
-    return _commitLabel;
+    return _authorLabel;
 }
 
 - (UILabel*)dateLabel {
     if (!_dateLabel) {
-        _dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 110, 200, 20)];
+        _dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 210, 300, 20)];
         _dateLabel.textColor = [UIColor colorWithRed:0x33/0xff green:0x33/0xff blue:0x33/0xff alpha:1];
     }
     return _dateLabel;
@@ -79,7 +79,7 @@
 
 - (UILabel*)buildTimeLabel {
     if (!_buildTimeLabel) {
-        _buildTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 140, 200, 20)];
+        _buildTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 240, 300, 20)];
         _buildTimeLabel.textColor = [UIColor colorWithRed:0x33/0xff green:0x33/0xff blue:0x33/0xff alpha:1];
     }
     return _buildTimeLabel;
